@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="script/main.js"></script>
+  <link rel="stylesheet" href="sass/main.css">
+  <title>Document</title>
+</head>
+<body>
+  <img src="/assets/banner.png" alt="Banner Meta informática" class="banner">
+  
+  <main>
+
+  <h1 class="title">Lista de Presença</h1>
+  <p class="description">Lista de presença do curso de informática do Meta Natal-RN</p>
+  
+  <form action="/presenca" method="POST" class="form">
+    
+    <label>Nome Completo:
+      <p>Nome completo, sem abreviações ou ocultações de alguma parte!</p>
+      <input type="text" class="name" placeholder="  Sua Resposta" required>
+    </label><br><br>
+    
+    <label>Sua Turma:</label>
+    <div class="grupo-turmas">
+    
+      <label><input type="radio" name="turma" value="Terça e Quinta - 07:30 / 09:00"> Terça e Quinta - 07:30 / 09:00</label>
+    
+      <label><input type="radio" name="turma" value="Terça e Quinta - 13:00 / 14:30"> Terça e Quinta - 13:00 / 14:30</label>
+    
+      <label><input type="radio" name="turma" value="Terça e Quinta - 14:30 / 16:00"> Terça e Quinta - 14:30 / 16:00</label>
+    
+      <label><input type="radio" name="turma" value="Terça e Quinta - 16:00 / 17:30"> Terça e Quinta - 16:00 / 17:30</label>
+    
+      <label><input type="radio" name="turma" value="Quarta e Sexta - 14:30 / 16:00"> Quarta e Sexta - 14:30 / 16:00</label>
+    
+      <label><input type="radio" name="turma" value="Quarta e Sexta - 16:00"> Quarta e Sexta - 16:00 / 17:30</label>
+    
+      <label><input type="radio" name="turma" value="Sábado - 07:00 / 09:00"> Sábado - 07:00 / 09:00</label>
+    
+      <label><input type="radio" name="turma" value="Sábado - 09:00 / 11:00"> Sábado - 09:00 / 11:00</label>
+    
+      <label><input type="radio" name="turma" value="Sábado - 11:00 / 13:00"> Sábado - 11:00 / 13:00</label>
+    
+      <label><input type="radio" name="turma" value="Sábado - 13:00 / 15:00"> Sábado - 13:00 / 15:00</label>
+    
+      <label><input type="radio" name="turma" value="Sábado - 15:00 / 17:00"> Sábado - 15:00 / 17:00 </label>
+    </div>
+
+    <button class="button" type="submit">Enviar</button>
+
+  </form>
+
+  <div class="alert">
+
+    <div class="erro">
+      <img src="/assets/nope.png" alt="Erro">
+      <p>Algo não deu certo! <br> Contate o professor!</p>
+    </div>
+    
+    <div class="sucess">
+      <img src="/assets/correct.png" alt="Funcionou">
+      <p>Não se preocupe,<br> sem faltas para você hoje!</p>
+    </div>
+  </div>
+    
+</main>
+</body>
+</html>

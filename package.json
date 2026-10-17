@@ -1,0 +1,22 @@
+{
+  "name": "chamada",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "node --watch app.js",
+    "dev:sass": "sass --watch public/sass/main.scss:public/sass/main.css --style compressed",
+    "start": "concurrently \"npm:dev:server\" \"npm:dev:sass\" "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
