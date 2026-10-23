@@ -5,8 +5,9 @@ const button = document.querySelector(".button");
 const radios = document.querySelectorAll('input[name="turma"]');
 const main = document.querySelector("main")
 
-button.disabled = true;
+const dados = await get_data()
 
+button.disabled = true;
 
 form.addEventListener("input", () => {
   const turmaSelecionada = document.querySelector(
@@ -84,3 +85,31 @@ function window_alert (type){
   main.querySelector(`p`).style.display = "none"
   
 }
+
+async function get_data() {
+   const resp = await fetch("/data")
+   
+   if(!resp.ok){
+    throw new Error("Erro ao buscar dados")
+   }
+
+   return await resp.json()
+}
+
+function contruct_options(data){
+  const clases = form.querySelector('.grupo-turmas') 
+  data.forEach(e => {
+      e.horarios.forEach(i =>{
+        const label = document.createElement('label')
+        const input = document.createElement('input')
+        input.type = 'radio'
+        input.name = 'turma'
+        input.value = `${e.dia} - ${i.replace('-', '/')}`
+        label.appendChild(input)
+        label.innerHTML += `${e.dia} - ${i.replace('-', '/')}`
+        clases.appendChild(label)
+      })
+  });
+}
+
+contruct_options(dados.turmas)
